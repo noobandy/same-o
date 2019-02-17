@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Index</title>
+</head>
+<body>
+    <h4 id="header">RFM-Index</h4>
+    <iframe id="frame" src="frame.html" frameborder="0"></iframe>
+    <iframe src="http://localhost:5000/" frameborder="0"></iframe>
+    <script>
+        var indexVar = 'Index';
+    </script>
+    <script>
+        var frame = document.getElementById('frame')
+
+        function Index(source) {
+            console.log(indexVar +" from " + source)
+        }
+        frame.onload = function(e) {
+            console.log(e)
+            var frameDocument = frame.contentDocument || frame.contentWindow.document;
+
+            frameDocument.getElementById('header').style.color = 'red';
+            frame.contentWindow.Frame()
+        }
+    </script>
+</body>
+</html>
